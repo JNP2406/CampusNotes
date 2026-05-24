@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Semester {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  name      String
+  coverUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  courses Course[]
+}
+
+model Course {
+  id         Int      @id @default(autoincrement())
+  semesterId Int
+  userId     Int
+  name       String
+  coverUrl   String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  semester Semester @relation(fields: [semesterId], references: [id])
+  files    File[]
+}
+
+model File {
+  id        Int      @id @default(autoincrement())
+  courseId  Int
+  userId    Int
+  title     String
+  fileUrl   String
+  fileType  String?
+  isShared  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  course Course @relation(fields: [courseId], references: [id])
+}
