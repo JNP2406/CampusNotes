@@ -55,23 +55,17 @@ API Gateway meneruskan request ke:
 
 ## 🎨 Design Patterns
 
-**1. Repository Pattern**
-Digunakan di NestJS melalui Prisma ORM untuk memisahkan logika akses database dari business logic. Contoh: `SemestersService`, `FriendsService`, `CoursesService`.
+**1. Singleton Pattern (Creational)**
+Digunakan di Flutter untuk service classes seperti `AuthService`, `StudyService`, dan `FriendService` — hanya dibuat satu instance dan digunakan di seluruh aplikasi untuk menghindari pembuatan objek yang berulang.
 
-**2. Singleton Pattern**
-Digunakan di Flutter untuk service classes seperti `AuthService`, `StudyService`, dan `FriendService` — hanya dibuat satu instance dan digunakan di seluruh aplikasi.
+**2. Facade Pattern (Structural)**
+API Gateway berperan sebagai Facade yang menyembunyikan kompleksitas dua backend service di belakangnya. Flutter hanya perlu berkomunikasi dengan satu URL (API Gateway) tanpa perlu mengetahui detail internal auth-service maupun study-service.
 
-**3. Provider Pattern**
-Digunakan di Flutter melalui package `provider`. `AuthProvider` mengelola state autentikasi secara global sehingga semua widget dapat mengakses data user.
+**3. Proxy Pattern (Structural)**
+API Gateway juga bertindak sebagai Proxy yang meneruskan setiap request dari Flutter ke service yang sesuai (auth-service atau study-service), sekaligus menangani routing dan forwarding static files.
 
-**4. Gateway Pattern**
-API Gateway berfungsi sebagai single entry point yang menyederhanakan komunikasi antara Flutter dan multiple backend services.
-
-**5. Guard Pattern**
-Digunakan di NestJS melalui `JwtAuthGuard` untuk melindungi endpoint yang membutuhkan autentikasi dan memverifikasi JWT token di setiap request.
-
-**6. DTO Pattern (Data Transfer Object)**
-Digunakan di NestJS untuk validasi input data. Contoh: `RegisterDto`, `LoginDto`, `CreateSemesterDto`, `CreateCourseDto`.
+**4. Observer Pattern (Behavioral)**
+Digunakan di Flutter melalui `ChangeNotifier` dan `Provider`. `AuthProvider` berperan sebagai subject yang diobservasi — ketika data user berubah (login, update profil, logout), semua widget yang mendengarkan akan otomatis terupdate.
 
 ---
 
