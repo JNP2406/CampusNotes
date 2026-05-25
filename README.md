@@ -16,20 +16,15 @@ CampusNotes menyediakan:
 ✅ Profile mahasiswa dengan info Binusian, Major, dan Campus
 
 
-🏗️ Architecture
-CampusNotes menggunakan Microservice Architecture yang terdiri dari:
+## 🏗️ Architecture
 
-Flutter (Mobile App)
-        ↓
-API Gateway (Port 3000)
-        ↓
-┌───────────────────────┐
-↓                       ↓
-Auth Service        Study Service
-(Port 3001)         (Port 3002)
-↓                       ↓
-auth_db             study_db
-(MySQL)             (MySQL)
+CampusNotes menggunakan **Microservice Architecture** yang terdiri dari:
+
+**Flutter (Mobile App)** → **API Gateway (Port 3000)**
+
+API Gateway meneruskan request ke:
+- **Auth Service (Port 3001)** → auth_db (MySQL)
+- **Study Service (Port 3002)** → study_db (MySQL)
 
 Services:
 1. Auth Service
