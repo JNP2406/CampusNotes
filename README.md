@@ -28,9 +28,6 @@ CampusNotes menyediakan:
 
 CampusNotes menggunakan **Microservice Architecture** yang terdiri dari:
 
-
-CampusNotes menggunakan **Microservice Architecture** yang terdiri dari:
-
 **Flutter (Mobile App)** → **API Gateway (Port 3000)**
 
 API Gateway meneruskan request ke:
