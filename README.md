@@ -67,6 +67,9 @@ API Gateway juga bertindak sebagai Proxy yang meneruskan setiap request dari Flu
 **4. Observer Pattern (Behavioral)**
 Digunakan di Flutter melalui `ChangeNotifier` dan `Provider`. `AuthProvider` berperan sebagai subject yang diobservasi — ketika data user berubah (login, update profil, logout), semua widget yang mendengarkan akan otomatis terupdate.
 
+**5. State Pattern (Behavioral)**
+Digunakan di Flutter melalui `StatefulWidget` dan `setState()`. Setiap screen seperti `HomeScreen`, `FriendsScreen`, dan `ProfileScreen` mengelola state-nya sendiri seperti `_isLoading`, `_semesters`, `_friends` — UI akan otomatis berubah sesuai state yang aktif saat itu.
+
 ---
 
 ## 🛠️ Tech Stack
