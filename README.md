@@ -8,19 +8,19 @@ CampusNotes adalah aplikasi mobile untuk mahasiswa yang membantu menyimpan, meng
 
 Mahasiswa sering kesulitan dalam:
 - Mengorganisir catatan per semester dan mata kuliah
-- Berbagi catatan dengan teman sekelas
+- Sulit mendapatkan referensi catatan dari mahasiswa lain
 - Tracking catatan dari berbagai mata kuliah
-- Mengakses catatan teman untuk belajar bersama
+- Tidak adanya platform khusus untuk berbagi catatan antar mahasiswa
 
 ---
 
 ## 💡 Solusi
 
 CampusNotes menyediakan:
-- ✅ Penyimpanan catatan terstruktur per **Semester → Mata Kuliah → File**
+- ✅ Menyediakan penyimpanan catatan yang terstruktur berdasarkan **Semester**, **Mata Kuliah**, dan **File**
 - ✅ Sistem **sharing catatan** antar mahasiswa yang sudah berteman
 - ✅ **Tracking catatan** dari setiap semester dan mata kuliah
-- ✅ **Profile mahasiswa** dengan info Binusian, Major, dan Campus
+- ✅ Memudahkan mahasiswa menemukan pengguna lain berdasarkan **jurusan**
 
 ---
 
