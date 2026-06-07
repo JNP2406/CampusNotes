@@ -1,0 +1,48 @@
+Sesi1
+
+from Bio.Seq import Seq
+seqA = Seq('TGCTCG')
+
+#Indexing(mengambil karkater)
+print(seqA[4])
+#FIND
+print(seqA.find('T')) # cari T pertama
+
+#SLICING(mengambil karakter tapi ada range nya)
+print(seqA[1:5]) # mulai dr index : sebelum index
+print(seqA[-5:]) # mulai dr 5 index terakhir
+#Reversed
+print(seqA[::-1]) # kalo 1 dia normal kalo -1 dia kebalik
+print(seqA[::2]) # kalo lebih dr 1 dia bakal print lompat sesuai angkanya
+
+#Merge/Join Sequence
+seqB = Seq('TCGAGC')
+seqC = seqA + seqB
+print(seqC)
+
+#Find Codon/SubSeq in Sequence (codon 3 huruf, SubSeq lebih dr 3 huruf)
+#Pakai Find
+print(seqA.find('TGC')) #bakal kasih urutan index pertamanya, cuma bisa sekali
+#Pakai nt_seacrh
+from Bio.SeqUtils import nt_seacrh
+print(nt_seacrh(str(seqA), 'TGC') # bakal kasih tau urutan index pertamanya, bisa bekali kali jika ada di seqnya
+
+#Nucleotide Base Frequency
+#Pakai Counter
+from collections import Counter
+counter_A = Counter(seqA)
+print('counter_A') # bakal kasih tau frekuensi/jumlah setiap karakter ada berapa
+#Pakai Count
+count_A = seqA.count('A')
+print(count_A) # bakal kasih tau freq/jumlah karakter tertentu aja (bisa lebih dr 1 karakter, cth:('AG'))
+
+#Plotting
+import matplotlib.pyplot as plt
+#Pakai Counter
+plt.bar(counter_A.keys(), counter_A.values())
+plt.titte('Freq Seq A Using Counter')
+plt.show
+#Pakai Count
+plt.bar(['A'], [count_A]) # butuh masukin satu2
+plt.titte('Freq Seq A Using Counter')
+plt.show

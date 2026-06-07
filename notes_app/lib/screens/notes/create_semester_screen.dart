@@ -106,6 +106,7 @@ class _CreateSemesterScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
 
       appBar: AppBar(
@@ -122,14 +123,11 @@ class _CreateSemesterScreenState
         ),
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-
-        child: Column(
-          crossAxisAlignment:
-              CrossAxisAlignment.start,
-
-          children: [
+    body: SingleChildScrollView(
+    padding: const EdgeInsets.all(24),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
             const SizedBox(height: 24),
 
             const Text(
